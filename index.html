@@ -7,11 +7,7 @@
   <title></title>
   <meta name="Generator" content="Cocoa HTML Writer" />
   <meta name="CocoaVersion" content="1671.5" />
-  <script type="text/javascript">
-	  var colors = ["red","orange","yellow","green","blue","purple","violet"];
-	  var b = colors[Math.floor(Math.random()*7)];
-	  var c = colors[Math.floor(Math.random()*7)];
- </script>
+  
   <style type="text/css">
 	  body {
 		  background: #efefef;
@@ -48,5 +44,14 @@
 <p class="p2"><span class="s1 red">“Do, or do not. There is no try.”</span><span class="s4"> </span><span class="s5">¬</span></p>
 <p class="p3"><span class="s6"></span><span class="s1">giving up after</span><span class="s2"> </span><span class="s7">random</span><span class="s8">  </span></p>
 	</div>
+  <script type="text/javascript">
+  	(function(){
+  		var colors = ["red","orange","yellow","green","blue","purple","violet"];
+  		var randomColor = colors[Math.floor(Math.random()*colors.length)];
+  		var rules = document.styleSheets[0].cssRules;
+  		var selectionRule = Array.prototype.find.apply(rules, [function(r){return r.selectorText == ".red::selection";}]);
+  		selectionRule.style.background = randomColor;
+  	})();
+ </script>
 </body>
 </html>
