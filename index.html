@@ -20,13 +20,14 @@
 		  transform: translate(-50%, -50%);
 	  }
     p.p1 {margin: 0.0px 0.0px 0.0px 42px; text-indent: -41.6px; font: 16pt Verdana; color: #0016b0; -webkit-text-stroke: #0016b0; opacity: 0.9; -webkit-user-select: none; cursor: default; }
-    p.p2 {margin: 10px 0.0px 2px 57px; text-indent: -57.8px; font: 27pt Georgia; color: #333; -webkit-text-stroke: #000000; padding-left: 1em; text-shadow: 0 -1px 2px white; }
+    p.p2 { margin: 10px 0.0px 2px 57px; text-indent: -57.8px; font: 27pt Georgia; color: #333; -webkit-text-stroke: #000000; padding-left: 1em; text-shadow: 0 -1px 2px white; }
     span.s4, span.s5 { user-select: none; -webkit-user-select: none; }
     p.p3 {margin: 0.0px 0.0px 0.0px 77px; text-indent: -86.7px; font: 16pt Verdana; color: #0016b0; -webkit-text-stroke: #0016b0; padding-left: 12em; opacity: 0.9; user-select: none; -webkit-user-select: none; cursor: default; }
     
-    .red::selection {
+    span.s1::selection {
 	    background: red;
 	    color: white;
+      text-shadow: 0 -1px 2px black;
     }
 
     span.s1 {font-kerning: none; font-variant-ligatures: no-common-ligatures; }
@@ -42,7 +43,7 @@
 <body>
 	<div>
 <p class="p1"><span class="s1"><b>display alert</b></span><span class="s2">  </span><span class="s3">¬</span></p>
-<p class="p2"><span class="s1 red">“Do, or do not. There is no try.”</span><span class="s4"> </span><span class="s5">¬</span></p>
+<p class="p2"><span class="s1">“Do, or do not. There is no try.”</span><span class="s4"> </span><span class="s5">¬</span></p>
 <p class="p3"><span class="s6"></span><span class="s1">giving up after</span><span class="s2"> </span><span class="s7">random</span><span class="s8">  </span></p>
 	</div>
   <script type="text/javascript">
@@ -50,7 +51,7 @@
   		var colors = ["red","orange","yellow","green","blue","purple","violet"];
   		var randomColor = colors[Math.floor(Math.random()*colors.length)];
   		var rules = document.styleSheets[0].cssRules;
-  		var selectionRule = Array.prototype.find.apply(rules, [function(r){return r.selectorText == ".red::selection";}]);
+  		var selectionRule = Array.prototype.find.apply(rules, [function(r){return r.selectorText == "span.s1::selection";}]);
   		selectionRule.style.background = randomColor;
   	})();
  </script>
